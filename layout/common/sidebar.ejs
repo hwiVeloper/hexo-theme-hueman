@@ -1,3 +1,6 @@
+<!-- busuanzi visitor counter script -->
+<script async src = "//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <aside id="sidebar">
     <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
     <div class="sidebar-top">
@@ -23,5 +26,14 @@
                 <%- partial('widget/' + widget, {post: page}) %>
             <% }) %>
         <% } %>
+        <!-- busuanzi counter display -->
+        <div class="busuanzi-counter">
+            <span id="busuanzi_container_site_pv">
+                Total : <span id="busuanzi_value_site_pv"></span>
+            </span>
+            <span id="busuanzi_container_site_uv">
+                Visitors : <span id="busuanzi_value_site_uv"></span>
+            </span>
+        </div>
     </div>
 </aside>

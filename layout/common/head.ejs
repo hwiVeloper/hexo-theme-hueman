@@ -32,13 +32,25 @@
     %>
         <meta name="keywords" content="<%= keywords.join(',') %>" />
     <% } %>
-    <%- open_graph({
-        image:          thumbnail(page),
-        fb_app_id:      theme.miscellaneous.open_graph.fb_app_id,
-        fb_admins:      theme.miscellaneous.open_graph.fb_admins,
-        twitter_id:     theme.miscellaneous.open_graph.twitter_id,
-        google_plus:    theme.miscellaneous.open_graph.google_plus,
-    }) %>
+    <!-- naver-site-verification -->
+    <meta name="naver-site-verification" content="4b97c9f410edba46c1d63bf0aaacc3f2fad71509"/>
+    <% if (is_home()) { %>
+        <%- open_graph({
+            image:          'images/logo.png',
+            fb_app_id:      theme.miscellaneous.open_graph.fb_app_id,
+            fb_admins:      theme.miscellaneous.open_graph.fb_admins,
+            twitter_id:     theme.miscellaneous.open_graph.twitter_id,
+            google_plus:    theme.miscellaneous.open_graph.google_plus,
+        }) %>
+    <% } else { %>
+        <%- open_graph({
+            image:          thumbnail(page),
+            fb_app_id:      theme.miscellaneous.open_graph.fb_app_id,
+            fb_admins:      theme.miscellaneous.open_graph.fb_admins,
+            twitter_id:     theme.miscellaneous.open_graph.twitter_id,
+            google_plus:    theme.miscellaneous.open_graph.google_plus,
+        }) %>
+    <% } %>
     <%- meta(page) %>
 
     <% if (theme.customize && theme.customize.social_links && theme.customize.social_links.rss) { %>
